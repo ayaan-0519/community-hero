@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard – Community Hero</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-icon">🏘️</span>
+        Community Hero
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report</a></li>
+        <li><a href="track.html">Track</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Community Dashboard</h1>
+        <p>Overview of civic issue trends, resolution metrics, and recent activity across your neighborhood.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Summary Cards -->
+        <div class="dashboard-summary">
+          <div class="summary-card blue fade-in">
+            <div class="summary-card-label">Total Reports</div>
+            <div class="summary-card-value">1,247</div>
+            <div class="summary-card-change up">↑ 12% from last month</div>
+          </div>
+          <div class="summary-card green fade-in">
+            <div class="summary-card-label">Resolved Issues</div>
+            <div class="summary-card-value">892</div>
+            <div class="summary-card-change up">↑ 8% from last month</div>
+          </div>
+          <div class="summary-card orange fade-in">
+            <div class="summary-card-label">Open Issues</div>
+            <div class="summary-card-value">243</div>
+            <div class="summary-card-change down">↓ 5% from last month</div>
+          </div>
+          <div class="summary-card purple fade-in">
+            <div class="summary-card-label">Avg. Resolution</div>
+            <div class="summary-card-value">48h</div>
+            <div class="summary-card-change up">↑ 15% faster</div>
+          </div>
+        </div>
+
+        <!-- Chart Placeholders -->
+        <div class="charts-grid">
+          <div class="chart-card fade-in">
+            <h3>Issues Reported – Last 6 Months</h3>
+            <div class="chart-placeholder">
+              <div class="chart-bars">
+                <div class="chart-bar" style="height: 60%;"></div>
+                <div class="chart-bar" style="height: 75%;"></div>
+                <div class="chart-bar" style="height: 45%;"></div>
+                <div class="chart-bar" style="height: 90%;"></div>
+                <div class="chart-bar" style="height: 70%;"></div>
+                <div class="chart-bar" style="height: 85%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-card fade-in">
+            <h3>Issues by Category</h3>
+            <div class="chart-placeholder">
+              <div class="chart-donut"></div>
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <span class="legend-dot" style="background: var(--blue-500);"></span>
+                Roads &amp; Pavement (36%)
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: var(--green-500);"></span>
+                Sanitation (25%)
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: #f59e0b;"></span>
+                Lighting (16%)
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background: var(--gray-300);"></span>
+                Other (23%)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="activity-card fade-in">
+          <h3>Recent Activity</h3>
+          <div class="activity-list">
+            <div class="activity-item">
+              <span class="activity-dot green"></span>
+              <div class="activity-content">
+                <p><strong>Issue #CH-2026-0129</strong> — Overflowing garbage bin at Central Park has been resolved.</p>
+                <time>2 hours ago</time>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="activity-dot blue"></span>
+              <div class="activity-content">
+                <p><strong>Issue #CH-2026-0145</strong> — Blocked storm drain on Maple Lane was reported as critical.</p>
+                <time>5 hours ago</time>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="activity-dot orange"></span>
+              <div class="activity-content">
+                <p><strong>Issue #CH-2026-0138</strong> — Broken streetlight repair crew has been dispatched to Elm Street.</p>
+                <time>1 day ago</time>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="activity-dot green"></span>
+              <div class="activity-content">
+                <p><strong>Issue #CH-2026-0121</strong> — Graffiti on community mural wall has been cleaned and resolved.</p>
+                <time>2 days ago</time>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="activity-dot blue"></span>
+              <div class="activity-content">
+                <p><strong>Issue #CH-2026-0142</strong> — Large pothole on Oak Avenue was reported and assigned to Roads Dept.</p>
+                <time>2 days ago</time>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="activity-dot orange"></span>
+              <div class="activity-content">
+                <p><strong>Issue #CH-2026-0135</strong> — Fallen tree branch on Birch Road is being cleared by Parks team.</p>
+                <time>3 days ago</time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Community Hero</h3>
+          <p>Hyperlocal Problem Solver — empowering citizens to report, track, and resolve civic issues in their neighborhoods.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="report.html">Report Issue</a>
+          <a href="track.html">Track Issues</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <a href="mailto:support@communityhero.org">support@communityhero.org</a>
+          <a href="tel:+18005551234">1-800-555-1234</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Community Hero. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

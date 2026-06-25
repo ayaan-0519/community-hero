@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Issues – Community Hero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="track-page">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-icon">🏘️</span>
+        Community Hero
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report</a></li>
+        <li><a href="track.html">Track</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="track-hero">
+      <div class="container">
+        <span class="track-hero-badge">Community Tracker</span>
+        <h1>Track Civic Issues</h1>
+        <p>Search, filter, and follow issues reported in your neighborhood. Support the ones that matter most to you.</p>
+      </div>
+    </section>
+
+    <section class="section track-section">
+      <div class="container">
+        <!-- Search & Filters -->
+        <div class="track-toolbar fade-in">
+          <div class="track-search-wrap">
+            <span class="track-search-icon">🔍</span>
+            <input type="search" id="issue-search" class="track-search" placeholder="Search by issue name, location, or category…" aria-label="Search issues">
+          </div>
+          <div class="track-filters">
+            <div class="track-filter-group">
+              <label for="filter-status">Status</label>
+              <select id="filter-status" class="track-select">
+                <option value="all">All Statuses</option>
+                <option value="open">Open</option>
+                <option value="progress">In Progress</option>
+                <option value="resolved">Resolved</option>
+              </select>
+            </div>
+            <div class="track-filter-group">
+              <label for="filter-category">Category</label>
+              <select id="filter-category" class="track-select">
+                <option value="all">All Categories</option>
+                <option value="roads">Roads &amp; Pavement</option>
+                <option value="lighting">Street Lighting</option>
+                <option value="sanitation">Sanitation &amp; Waste</option>
+                <option value="water">Water &amp; Drainage</option>
+                <option value="parks">Parks &amp; Public Spaces</option>
+                <option value="safety">Public Safety</option>
+              </select>
+            </div>
+            <div class="track-filter-group">
+              <label for="filter-severity">Severity</label>
+              <select id="filter-severity" class="track-select">
+                <option value="all">All Severities</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+            </div>
+            <button type="button" class="btn-clear-filters" id="clear-filters">Clear</button>
+          </div>
+        </div>
+
+        <div class="track-results-bar fade-in">
+          <p id="results-count">Showing 8 issues</p>
+        </div>
+
+        <!-- Issue Cards Grid -->
+        <div class="issue-grid" id="issue-grid"></div>
+
+        <div class="track-empty" id="track-empty" hidden>
+          <div class="track-empty-icon">🔎</div>
+          <h3>No issues found</h3>
+          <p>Try adjusting your search or filters to find what you're looking for.</p>
+          <button type="button" class="btn btn-primary" id="reset-filters">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Community Hero</h3>
+          <p>Hyperlocal Problem Solver — empowering citizens to report, track, and resolve civic issues in their neighborhoods.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="report.html">Report Issue</a>
+          <a href="track.html">Track Issues</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <a href="mailto:support@communityhero.org">support@communityhero.org</a>
+          <a href="tel:+18005551234">1-800-555-1234</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Community Hero. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

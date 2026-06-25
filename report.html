@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Issue – Community Hero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="report-page">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-icon">🏘️</span>
+        Community Hero
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report</a></li>
+        <li><a href="track.html">Track</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="report-hero">
+      <div class="container">
+        <span class="report-hero-badge">Report an Issue</span>
+        <h1>Tell us what's wrong in your neighborhood</h1>
+        <p>Fill in the details below and our AI will analyze your report once submitted.</p>
+      </div>
+    </section>
+
+    <section class="section report-section">
+      <div class="container report-layout">
+        <!-- Report Form -->
+        <div class="report-form-card fade-in">
+          <div class="report-form-header">
+            <div class="report-form-icon">📝</div>
+            <div>
+              <h2>Issue Details</h2>
+              <p>Provide as much detail as possible for faster resolution.</p>
+            </div>
+          </div>
+
+          <form id="report-form" class="report-form">
+            <div class="form-group">
+              <label for="title">Issue Title</label>
+              <input type="text" id="title" name="title" placeholder="e.g. Large pothole on Main Street" required>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" rows="4"
+                placeholder="Describe the issue — when you noticed it, size, safety concerns, and any other relevant details..."
+                required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Upload Image</label>
+              <div class="file-upload file-upload-premium" id="drop-zone">
+                <input type="file" id="file-upload" accept="image/*">
+                <div class="file-upload-content" id="upload-placeholder">
+                  <div class="file-upload-icon-wrap">📷</div>
+                  <p class="file-upload-title"><strong>Click to upload</strong> or drag and drop</p>
+                  <p class="file-upload-hint">PNG, JPG or WEBP up to 10 MB</p>
+                </div>
+                <div class="file-preview" id="file-preview">
+                  <img id="preview-image" alt="Preview of uploaded issue photo">
+                  <button type="button" class="file-remove" id="file-remove" aria-label="Remove image">✕</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Current Location</label>
+              <div class="location-input-wrap">
+                <span class="location-icon">📍</span>
+                <input type="text" id="location" name="location" placeholder="Street address, landmark, or coordinates"
+                  required>
+                <button type="button" class="btn-location" id="detect-location">
+                  <span>Use GPS</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="category">Category</label>
+              <div class="select-wrap">
+                <select id="category" name="category" required>
+                  <option value="">Select a category</option>
+                  <option value="roads">Roads &amp; Pavement</option>
+                  <option value="lighting">Street Lighting</option>
+                  <option value="sanitation">Sanitation &amp; Waste</option>
+                  <option value="water">Water &amp; Drainage</option>
+                  <option value="parks">Parks &amp; Public Spaces</option>
+                  <option value="safety">Public Safety</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              Submit Report
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- AI Analysis Panel -->
+        <aside class="ai-panel-card fade-in">
+          <div class="ai-panel-header">
+    <div class="ai-panel-icon">
+      <span>🤖</span>
+      <span class="ai-status-dot"></span>
+    </div>
+    <div>
+      <h2>AI Analysis</h2>
+      <p class="ai-panel-subtitle">
+        Results will appear here after submission
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-panel-body">
+<div class="ai-result-card">
+  <div class="ai-result-card-header">
+    <span class="ai-result-icon">🏷️</span>
+    <span class="ai-result-label">Category</span>
+  </div>
+  <div class="ai-result-value" id="ai-category">
+    Waiting...
+  </div>
+</div>
+            <div class="ai-result-card">
+              <div class="ai-result-card-header">
+                <span class="ai-result-icon">⚠️</span>
+                <span class="ai-result-label">Severity</span>
+              </div>
+              <div class="ai-result-value" id="ai-severity">
+                Waiting...
+              </div>
+            </div>
+
+            <div class="ai-result-card">
+              <div class="ai-result-card-header">
+                <span class="ai-result-icon">🏛️</span>
+                <span class="ai-result-label">Department</span>
+              </div>
+              <div class="ai-result-value" id="ai-department">
+                Waiting...
+              </div>
+            </div>
+
+            <div class="ai-result-card ai-result-card-wide">
+              <div class="ai-result-card-header">
+                <span class="ai-result-icon">📋</span>
+                <span class="ai-result-label">Summary</span>
+              </div>
+              <div class="ai-result-value" id="ai-summary">
+                Waiting...
+              </div>
+            </div>
+
+            <div class="ai-result-card ai-result-card-wide">
+              <div class="ai-result-card-header">
+                <span class="ai-result-icon">💡</span>
+                <span class="ai-result-label">Suggested Action</span>
+              </div>
+              <div class="ai-result-value" id="ai-action">
+                Waiting...
+              </div>
+            </div>
+
+          </div>
+          <div class="ai-panel-footer">
+  <span class="ai-pending-badge">⏳ Awaiting submission</span>
+</div>
+
+</aside>
+      </div>
+    </section>
+  </main>
+
+          <!-- Footer -->
+          <footer class="footer">
+            <div class="container">
+              <div class="footer-grid">
+                <div class="footer-brand">
+                  <h3>Community Hero</h3>
+                  <p>Hyperlocal Problem Solver — empowering citizens to report, track, and resolve civic issues in their
+                    neighborhoods.</p>
+                </div>
+                <div class="footer-links">
+                  <h4>Quick Links</h4>
+                  <a href="index.html">Home</a>
+                  <a href="report.html">Report Issue</a>
+                  <a href="track.html">Track Issues</a>
+                  <a href="dashboard.html">Dashboard</a>
+                </div>
+                <div class="footer-links">
+                  <h4>Contact</h4>
+                  <a href="mailto:support@communityhero.org">support@communityhero.org</a>
+                  <a href="tel:+18005551234">1-800-555-1234</a>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <p>&copy; 2026 Community Hero. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+
+          <script src="js/app.js"></script>
+</body>
+
+</html>
